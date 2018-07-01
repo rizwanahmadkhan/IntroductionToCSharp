@@ -53,7 +53,8 @@ class Program
         //del("Hello from delegate");
         #endregion
 
-        #region Part 37
+        #region Part 3738
+        IsPromotable isPromotable = new IsPromotable(checkPromotionEligibility);
 
         List<Employee> empList = new List<Employee>();
 
@@ -62,11 +63,17 @@ class Program
         empList.Add(new Employee() { Id = 101, Name = "John", Salary = 6000, Experience = 6, });
         empList.Add(new Employee() { Id = 101, Name = "Joe", Salary = 3000, Experience = 3, });
 
-        Employee.PromoteEmployee(empList);
+        Employee.PromoteEmployee(empList, isPromotable);
 
         #endregion
 
     }
+
+    public static bool checkPromotionEligibility(Employee emp)
+    {
+        return emp.Experience >= 5 ? true : false;
+    }
+
 
     #region Part 36
 
@@ -78,7 +85,9 @@ class Program
     #endregion
 }
 
-#region Part 37
+#region Part 3738
+
+public delegate bool IsPromotable(Employee empl);
 
 public class Employee
 {
@@ -87,11 +96,11 @@ public class Employee
     public int Salary { get; set; }
     public int Experience { get; set; }
 
-    public static void PromoteEmployee(List<Employee> employeeList)
+    public static void PromoteEmployee(List<Employee> employeeList, IsPromotable IsEligibleToPromote)
     {
         foreach(Employee e in employeeList)
         {
-            if(e.Experience >= 5)
+            if(IsEligibleToPromote(e) == true)
             {
                 Console.WriteLine(e.Name + " promoted");
             }
