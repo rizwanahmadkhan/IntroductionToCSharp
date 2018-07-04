@@ -274,6 +274,24 @@ class Program
         //}
 
         #endregion
+
+        #region Part 49
+
+        //Customer C1 = new Customer();
+        ////C1._id; can't access this because _id is private
+        ////Console.WriteLine(C1.ID);
+
+        //CorporateCustomer CC = new CorporateCustomer();
+        //CC.printID();
+
+        #endregion
+
+        #region Part 52
+
+        Calculator.Add(10, 20);
+        //Calculator.Add(10, 20, 39);
+
+        #endregion
     }
 
     #region Part 45 46
@@ -328,6 +346,62 @@ class Program
     #endregion
 }
 
+#region Part 52 Attributes
+
+public class Calculator
+{
+    [Obsolete]
+    public static int Add(int FirstNumber, int SecondNumber)
+    {
+        return FirstNumber + SecondNumber;
+    }
+
+    public static int Add(List<int> Numbers)
+    {
+        int sum = 0;
+        foreach(int num in Numbers)
+        {
+            sum += num;
+        }
+        return sum;
+    }
+}
+
+#endregion
+
+#region Part 49 Access Modifiers
+
+public class Customer
+{
+    //private int _id;
+
+    //public int ID
+    //{
+    //    get
+    //    {
+    //        return _id;
+    //    }
+    //    set
+    //    {
+    //        _id = value;
+    //    }
+    //}
+
+    protected int ID;
+}
+
+public class CorporateCustomer : Customer
+{
+    public void printID()
+    {
+        CorporateCustomer CC = new CorporateCustomer();
+        CC.ID = 101;
+        Console.WriteLine(CC.ID);
+    }
+}
+
+#endregion
+
 #region Part 45, 46, 47 Enums
 
 public enum Gender
@@ -340,11 +414,11 @@ public enum Gender
 //0 - Unknown
 //1 - Male
 //2 - Female
-public class Customer
-{
-    public string Name { get; set; }
-    public Gender Gender { get; set; }
-}
+//public class Customer
+//{
+//    public string Name { get; set; }
+//    public Gender Gender { get; set; }
+//}
 
 #endregion
 
