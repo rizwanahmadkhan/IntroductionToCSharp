@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using System.Runtime.InteropServices;
+using System.Linq;
 
 
 namespace IToCSharp
@@ -367,7 +368,214 @@ namespace IToCSharp
 
             //AddNumbers(20, 30);
 
-            AddNumbers(20, 30, new int[] { 40, 50 });
+            //AddNumbers(20, 30, new int[] { 40, 50 });
+
+            #endregion
+
+            #region Part 72 73 Dictionaries
+
+            //Customer customer1 = new Customer()
+            //{
+            //    ID = 101,
+            //    Name = "Mark",
+            //    Salary = 5000,
+            //};
+
+            //Customer customer2 = new Customer()
+            //{
+            //    ID = 110,
+            //    Name = "Pam",
+            //    Salary = 6500,
+            //};
+
+            //Customer customer3 = new Customer()
+            //{
+            //    ID = 119,
+            //    Name = "John",
+            //    Salary = 3500,
+            //};
+
+            //Dictionary<int, Customer> customersDictionary = new Dictionary<int, Customer>();
+
+            //customersDictionary.Add(customer1.ID, customer1);
+            //customersDictionary.Add(customer2.ID, customer2);
+            //customersDictionary.Add(customer3.ID, customer3);
+
+            //Customer cust = customersDictionary[119];
+
+            //Console.WriteLine("ID = {0}, Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+
+            //foreach(KeyValuePair<int, Customer> customerKeyValuePair in customersDictionary)
+            //{
+            //    Console.WriteLine("Key = {0}", customerKeyValuePair.Key);
+            //    Customer cust = customerKeyValuePair.Value;
+            //    Console.WriteLine("ID = {0}, Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+            //    Console.WriteLine("---------------------------------");
+            //}
+
+            //foreach (Customer cust in customersDictionary.Values)
+            //{
+            //    //Console.WriteLine("Key = {0}", customerKeyValuePair.Key);
+            //    //Customer cust = customerKeyValuePair.Value;
+            //    Console.WriteLine("ID = {0}, Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+            //    Console.WriteLine("---------------------------------");
+            //}
+
+            //Customer cust;
+            //if(customersDictionary.TryGetValue(111, out cust) == true)
+            //{
+            //    Console.WriteLine("ID = {0}, Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The key is not found");
+            //}
+
+            //Console.WriteLine("Total Items = {0}", customersDictionary.Count(kvp => kvp.Value.Salary > 4000));
+
+            //Customer[] customers = new Customer[3];
+            //customers[0] = customer1;
+            //customers[1] = customer2;
+            //customers[2] = customer3;
+
+            //Dictionary<int, Customer> dict = customers.ToDictionary(cust => cust.ID, cust => cust);
+
+            //foreach(KeyValuePair<int, Customer> kvp in dict)
+            //{
+            //    Console.WriteLine("Key = {0}", kvp.Key);
+            //    Customer cust = kvp.Value;
+            //    Console.WriteLine("ID = {0}, Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+            //}
+
+            //List<Customer> customers = new List<Customer>();
+            //customers.Add(customer1);
+            //customers.Add(customer2);
+            //customers.Add(customer3);
+
+            //Dictionary<int, Customer> dict = customers.ToDictionary(cust => cust.ID, cust => cust);
+
+            //foreach (KeyValuePair<int, Customer> kvp in dict)
+            //{
+            //    Console.WriteLine("Key = {0}", kvp.Key);
+            //    Customer cust = kvp.Value;
+            //    Console.WriteLine("ID = {0}, Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+            //}
+
+            #endregion
+
+            #region Part 74 77 List Collection
+
+            //Customer customer1 = new Customer()
+            //{
+            //    ID = 101,
+            //    Name = "Mark",
+            //    Salary = 5000,
+            //};
+
+            //Customer customer2 = new Customer()
+            //{
+            //    ID = 110,
+            //    Name = "Pam",
+            //    Salary = 6500,
+            //};
+
+            //Customer customer3 = new Customer()
+            //{
+            //    ID = 119,
+            //    Name = "John",
+            //    Salary = 3500,
+            //};
+
+            //List<Customer> customers = new List<Customer>(2);
+            //customers.Add(customer1);
+            //customers.Add(customer2);
+            //customers.Add(customer3);
+            //customers.Insert(0, customer3);
+
+            //Console.WriteLine(customers.IndexOf(customer3, 0, 4));
+
+            //List<int> numbers = new List<int>() { 1, 8, 7, 5, 2 ,3, 4, 9, 6 };
+
+            //Console.WriteLine("Number before sorting");
+
+            //foreach(int number in numbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            //numbers.Sort();
+
+            //Console.WriteLine("Number after sorting");
+
+            //foreach (int number in numbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            //numbers.Reverse();
+
+            //Console.WriteLine("Number in descending order");
+
+            //foreach (int number in numbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            //List<string> alphabets = new List<string>() { "B", "F", "D", "E", "A", "C" };
+            //Console.WriteLine("Alphabets before sorting");
+            //foreach (string alphabet in alphabets)
+            //{
+            //    Console.WriteLine(alphabet);
+            //}
+
+            //alphabets.Sort();
+            //Console.WriteLine("Alphabets after sorting");
+            //foreach (string alphabet in alphabets)
+            //{
+            //    Console.WriteLine(alphabet);
+            //}
+
+            //alphabets.Reverse();
+            //Console.WriteLine("Alphabets in descending order");
+            //foreach (string alphabet in alphabets)
+            //{
+            //    Console.WriteLine(alphabet);
+            //}
+
+            //customers.Sort();
+
+
+            #endregion
+
+            #region Part 78 Sorting a List
+
+            Customer customer1 = new Customer()
+            {
+                ID = 101,
+                Name = "Mark",
+                Salary = 4000,
+            };
+
+            Customer customer2 = new Customer()
+            {
+                ID = 110,
+                Name = "Pam",
+                Salary = 7000,
+            };
+
+            Customer customer3 = new Customer()
+            {
+                ID = 119,
+                Name = "John",
+                Salary = 5500,
+            };
+
+            List<Customer> customers = new List<Customer>(2);
+            customers.Add(customer1);
+            customers.Add(customer2);
+            customers.Add(customer3);
+
+            customers.Sort();
 
             #endregion
 
@@ -389,25 +597,25 @@ namespace IToCSharp
 
         //    Console.WriteLine("Sum = {0}", result); 
         //}
-        public static void AddNumbers(int firstNumber, int secondNumber, [Optional] int[] restOfNumbers)
-        {
-            int result = firstNumber + secondNumber;
+        //public static void AddNumbers(int firstNumber, int secondNumber, [Optional] int[] restOfNumbers)
+        //{
+        //    int result = firstNumber + secondNumber;
 
-            if(restOfNumbers != null)
-            {
-                foreach(int i in restOfNumbers)
-                {
-                    result += i;
-                }
-            }
+        //    if(restOfNumbers != null)
+        //    {
+        //        foreach(int i in restOfNumbers)
+        //        {
+        //            result += i;
+        //        }
+        //    }
 
-            Console.WriteLine("Sum = {0}", result);
-        }
+        //    Console.WriteLine("Sum = {0}", result);
+        //}
 
         //public static void AddNumbers(int firstNumber, int secondNumber)
         //{
         //    int result = firstNumber + secondNumber;
-            
+
         //    Console.WriteLine("Sum = {0}", result);
         //}
 
@@ -464,6 +672,18 @@ namespace IToCSharp
 
         #endregion
     }
+
+    #region Part 72 73 Dictonaries 74 List 78 Sort Complex Types
+
+    public class Customer
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+
+    }
+
+    #endregion
 
     #region Part 58 Overriding Equals() Mehtod
 
